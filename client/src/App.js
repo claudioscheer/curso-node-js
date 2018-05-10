@@ -1,28 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  state = {
-    response: '',
-  };
+import Users from './components/user/Users';
+import logo from './assets/images/logo.svg';
+import './assets/css/App.css';
 
-  componentWillMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.mensagem }))
-      .catch(error => console.error(error));
-  }
-
-  async callApi() {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message);
-    }
-
-    return body;
-  }
+class App extends React.Component {
 
   render() {
     return (
@@ -31,9 +13,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          {this.state.response}
-        </p>
+
+        <div className="App-intro">
+          <Users />
+        </div>
       </div>
     );
   }
