@@ -27,7 +27,6 @@ class Users extends React.Component {
     return (
       <div>
         <h1>Users</h1>
-        <EditUser onAddUser={() => this.getUsers()} />
         <p></p>
         {
           this.state.loading ?
