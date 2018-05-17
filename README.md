@@ -1,5 +1,5 @@
 ## Base de dados
-```
+```sql
 DROP DATABASE IF EXISTS react_node;
 CREATE DATABASE IF NOT EXISTS react_node;
 USE react_node;
