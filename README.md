@@ -1,3 +1,6 @@
+## Slides
+Os slides da apresentação estão disponíveis [aqui](https://slides.com/claudioscheer/curso-node-js/).
+
 ## Base de dados
 ```sql
 DROP DATABASE IF EXISTS react_node;
