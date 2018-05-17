@@ -4,8 +4,8 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Users from './components/user/Users';
-import EditUser from './components/user/EditUser';
+import Usuarios from './components/Usuarios';
+import EditarUsuario from './components/EditarUsuario';
 
 class App extends React.Component {
 
@@ -14,8 +14,8 @@ class App extends React.Component {
       <div>
         <Router>
           <div>
-            <Route exact={true} path="/" component={Users} />
-            <Route exact={true} path="/user/:id?" component={EditUser} />            
+            <Route exact={true} path="/" component={Usuarios} />
+            <Route exact={true} path="/usuario/:codigo?" component={EditarUsuario} />
           </div>
         </Router>
       </div>

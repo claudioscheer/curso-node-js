@@ -1,12 +1,10 @@
-const _ = require('lodash');
+const conexaoService = require('./conexao-service');
 
-const connectionService = require('./connection-service');
-
-module.exports.getUsers = () =>
+module.exports.buscarUsuarios = () =>
   new Promise(async (resolve, reject) => {
-    const connection = await connectionService.getPool();
+    const connection = await conexaoService.getPool();
     connection.query(
-      'SELECT * FROM user ORDER BY user.name ASC', [],
+      'SELECT * FROM usuario ORDER BY usuario.nome ASC', [],
       (error, results) => {
         if (!error) {
           resolve(results);
@@ -17,11 +15,11 @@ module.exports.getUsers = () =>
     );
   });
 
-module.exports.saveUser = user =>
+module.exports.salvarUsuario = usuario =>
   new Promise(async (resolve, reject) => {
-    const connection = await connectionService.getPool();
+    const connection = await conexaoService.getPool();
     connection.query(
-      'INSERT INTO user SET ?', { name: user.name, age: user.age },
+      'INSERT INTO usuario SET ?', { nome: usuario.nome, idade: usuario.idade },
       (error, results) => {
         if (!error) {
           resolve(results);

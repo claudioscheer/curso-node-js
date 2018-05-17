@@ -1,8 +1,12 @@
 const mysql = require('mysql');
 
-const config = require('../config.json');
-
-const pool = mysql.createPool(config.connection);
+const pool = mysql.createPool({
+  "host": "127.0.0.1",
+  "port": 3306,
+  "database": "react_node",
+  "user": "root",
+  "password": "",
+});
 
 module.exports.getPool = () => pool;
 
