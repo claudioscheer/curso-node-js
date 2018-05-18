@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
+    "server": "nodemon --inspect src/server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "author": "Claudio Scheer <claudioscheer16@gmail.com> (https://claudioscheer.github.io)",
