@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function requestSync(ms) {
+            let start = Date.now();
+            let now = start;
+            while (now - start < ms) {
+                now = Date.now();
+            }
+        }
+
+        function buscarDados() {
+            console.log('buscando dados');
+            requestSync(4000);
+            console.log('request a ok');
+            requestSync(2000);
+            console.log('request b ok');
+        }
+    </script>
+</head>
+
+<body>
+    <p>request a</p>
+    <p>request b</p>
+    <button onclick="buscarDados()">buscar dados</button>
+    <br />
+    <br />
+    <input />
+</body>
+
+</html>
